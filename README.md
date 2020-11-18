@@ -14,7 +14,7 @@ Welcome to use our trustworthy bug localization tool with multi-language support
 Having conda installed on your machine, please execute `bash env_config.sh` to create a virtual environment and install necessary dependencies.
 
 ## Running Configuration
-Make sure that you are in the root path of this repo. There should be `./result` folder in the repo, and the generated file will be stored in this folder.
+Make sure that you are in the root path of this repo. There should be a `./result` folder in the repo (if not, please create one), and the generated file will be stored in this folder.
 
 ### Configuring bug information
 
@@ -44,8 +44,6 @@ There are five steps:
 * Step 3: Localizing buggy files
 * Step 4: Generating summary results
 
-# System testing within SOAR
-After you finishing the previous steps in MacOS, Ubuntu and Windows, you can execute `python test_multibl.py` (Only support MacOS and Linux), to see is there any exceptions raised. The programs will run in parallel and generate many messages. You may want to search for keyword, e.g. 'error', 'exception'.
 
 ## Results on open source projects
 |Project|| No. of reports  | Accuracy  |
@@ -57,8 +55,14 @@ After you finishing the previous steps in MacOS, Ubuntu and Windows, you can exe
 |[tika](https://github.com/apache/tika)| Conservative | 87 |77.01% |
 || Optimistic  | 155 | 71.61% |
 
+Here an 'accurate' recommendation means that the tool ranks a related bug file in top 10. 
+
+To replicate above results, you can find bug reports data for the three repositories in `/bugzbook_data/sheet`. You also need to clone these repos and configure `path_to_original_codebase` in `config.ini` file. For example, you can `mkdir codebase_data` under `/bugzbook_data`, and clone repos by:
+* git clone https://github.com/apache/sqoop
+* git clone https://github.com/apache/wicket
+* git clone https://github.com/apache/tika
 
 ## Contact
-If you meet any problem when using the tool, please contact zyang@smu.edu.sg
+If you have any questions or meet any problem when using the tool, feel free to contact zyang@smu.edu.sg
 
 
