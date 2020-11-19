@@ -21,7 +21,7 @@ The sequence of each column in .xlsx files should be:
 9. FEATURE
 10. MODULE
 
-[**Please Notice**] 1st must be ISSUENO (bug id), 2nd must be DISCRIPT (summary), 6th must be DETAILDESCRIPTION (detail description), 7th must be FILE_PATH (ground truth), and 8th must be CREATE_TIME.
+[**Please Notice**] The sequence of each column in the sheet is **important**. 1st must be ISSUENO (bug id), 2nd must be DISCRIPT (summary), 6th must be DETAILDESCRIPTION (detail description), 7th must be FILE_PATH (ground truth), and 8th must be CREATE_TIME. Current version of this tool doesn't use other values. 
 
 ## Environment Configuration
 Having conda installed on your machine, please execute `bash env_config.sh` to create a virtual environment and install necessary dependencies.
@@ -38,7 +38,7 @@ You need to specify bug information in `config.ini` file, including:
 
 ### Configuring running mode
 The tool runs in two modes:
-* Optimistic filtering mode: generating buggy file recommendations for all bug report received;
+* Optimistic filtering mode: generating buggy file recommendations for all valid bug report received;
 * Conservative filtering mode: generating fewer recommendations, but recommendations are more trustworthy.
 
 You can specify the mode in `config.ini`. You can also choose "all" to see the results of the two modes at the same time.
